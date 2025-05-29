@@ -13,6 +13,7 @@ spec:
       labels:
         app: flask
         version: blue
+        harness.io/color: blue         # <--- Add this
     spec:
       containers:
       - name: flask
