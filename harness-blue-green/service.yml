@@ -12,4 +12,5 @@ spec:
     targetPort: 5000
   selector:
     app: flask
-    version: blue  # Harness will patch this selector to switch traffic
+    version: blue                 # Harness will patch this selector to switch traffic
+    harness.io/color: blue        # <--- Add this as well
