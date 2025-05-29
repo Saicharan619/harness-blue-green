@@ -2,6 +2,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: flask-service
+  annotations:
+    harness.io/primary-service: "true"   # <--- REQUIRED for Harness to work
+    harness.io/direct-apply: "true"      # Optional but good to keep
 spec:
   type: LoadBalancer
   ports:
@@ -10,5 +13,5 @@ spec:
     targetPort: 5000
   selector:
     app: flask
-    version: blue                 # Harness will patch this selector to switch traffic
+    version: blue
     harness.io/color: blue
