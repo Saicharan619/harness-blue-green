@@ -12,4 +12,4 @@ spec:
     targetPort: 5000
   selector:
     app: flask
-    version: blue  # Harness will patch this selector during blue-green switch
+    version: blue  # Harness will patch this selector to switch traffic
