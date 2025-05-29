@@ -15,6 +15,7 @@ spec:
       labels:
         app: flask
         version: green
+        harness.io/color: green         # <--- Add this
     spec:
       containers:
       - name: flask
