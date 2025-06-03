@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: flaskapp
-    version: <+infra.activeService.name>
+    version: green
   ports:
     - protocol: TCP
       port: 80
