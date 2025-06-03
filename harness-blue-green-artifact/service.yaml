@@ -3,9 +3,10 @@ kind: Service
 metadata:
   name: flaskapp-service
 spec:
+  type: LoadBalancer
   selector:
     app: flaskapp
-    version: green
+    version: <+infra.activeService.name>    # either blue or green, Harness controls this
   ports:
     - protocol: TCP
       port: 80
