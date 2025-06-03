@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flaskapp-<+deployment.identifier>    # auto becomes flaskapp-blue or flaskapp-green
+  name: flaskapp-<+deployment.identifier>
 spec:
   replicas: 1
   selector:
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: flaskapp
-          image: <+artifact.image>           # image: saicharan12121/flaskapp:v1 or v2
+          image: <+artifact.image>
           ports:
             - containerPort: 5000
