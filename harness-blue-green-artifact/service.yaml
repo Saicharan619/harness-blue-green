@@ -6,7 +6,7 @@ spec:
   type: LoadBalancer
   selector:
     app: flaskapp
-    version: <+infra.activeService.name>    # either blue or green, Harness controls this
+    version: <+infra.activeService.name>
   ports:
     - protocol: TCP
       port: 80
