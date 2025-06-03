@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flaskapp-${{deployment.identifier}}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flaskapp
+      version: ${{deployment.identifier}}       # 👈 REQUIRED for blue-green
+  template:
+    metadata:
+      labels:
+        app: flaskapp
+        version: ${{deployment.identifier}}     # 👈 REQUIRED for blue-green
+    spec:
+      containers:
+        - name: flaskapp
+          image: <+artifact.image>              # 👈 Harness will inject the image (v1 or v2)
+          ports:
+            - containerPort: 5000
